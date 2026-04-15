@@ -2,6 +2,10 @@ import time
 from pathlib import Path
 import json
 import time
+import matplotlib.pyplot as plt
+from generators import unordered_sequence, ordered_sequence
+
+from generators import unordered_sequence
 
 
 def read_data(file_name, field):
@@ -44,6 +48,24 @@ def binary_search(sequence, found_key):
             right = middle - 1
     return None
 
+def test_complexity(list_of_n):
+    sizes = [100, 500, 1000, 5000, 10000]
+    linear_times = []
+    binary_times = []
+    for n in list_of_n:
+        unordered_data = data(n)
+        ordered_data = ordered_sequence(n)
+        duration_linear = 0
+        binary_linear = 0
+
+def pattern_search(sequence, vzor):
+    positions = set()
+    vzor_len = len(vzor)
+
+    for i in range(len(sequence) - vzor_len + 1)
+        positions.add(i)
+        return positions
+
 def main():
     data = read_data("sequential.json", "unordered_numbers")
     search = linear_search(data,2)
@@ -60,7 +82,11 @@ def main():
         found_num = linear_search(data, 0)
         end_time = time.perf_counter()
         duration += end_time - start_time
-    print(duration)
+    print(duration / repetitions)
+    dna = read_data("sequential.json", "dna_sequence")
+    target_vzor = "ACCT"
+    vzor_search = pattern_search(dna, target_vzor)
+    print(vzor_search)
 
 if __name__ == "__main__":
     main()
